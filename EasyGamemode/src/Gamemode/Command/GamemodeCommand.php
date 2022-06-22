@@ -26,6 +26,10 @@ class GamemodeCommand extends Command {
             }
             $noExist = implode(" ", $args);
             switch(strtolower($args[0])){
+                case 0:
+                    $pl->setGamemode(GameMode::SURVIVAL());
+                    $pl->sendMessage(T::GREEN."TU Modo De Juego Cambio a Supervivencia");
+                break;
                 case 1:
                     $pl->setGamemode(GameMode::CREATIVE());
                     $pl->sendMessage(T::GREEN."TU Modo De Juego Cambio a Creativo");
@@ -33,10 +37,6 @@ class GamemodeCommand extends Command {
                 case 2:
                     $pl->setGamemode(GameMode::ADVENTURE());
                     $pl->sendMessage(T::GREEN."TU Modo De Juego Cambio a Aventura");
-                break;
-                case 0
-                    $pl->setGamemode(GameMode::SURVIVAL());
-                    $pl->sendMessage(T::GREEN."TU Modo De Juego Cambio a Supervivencia");
                 break;
                 case 3:
                     $pl->setGamemode(GameMode::SPECTATOR());
